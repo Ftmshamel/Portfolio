@@ -114,19 +114,6 @@ h2{font-size:clamp(2rem,3.8vw,2.85rem);font-weight:800;letter-spacing:-.035em;li
 .fact b{font-weight:600;font-size:.95rem}
 
 /* highlights */
-.impact{background:linear-gradient(120deg,#0b1b45,#1e40af 60%,#2f5bd3);color:#fff;padding:64px 0;position:relative;overflow:hidden}
-[data-theme="dark"] .impact{background:linear-gradient(120deg,#0d1730,#16264d 60%,#1d3266)}
-.impact::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.14),transparent)}
-.impact-in{display:grid;grid-template-columns:1fr 2.2fr;gap:48px;align-items:center;position:relative;z-index:1}
-.impact-label{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:8px}
-.impact h3{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.stats{display:grid;grid-template-columns:repeat(3,1fr)}
-.stat{padding:0 32px;border-left:1px solid rgba(255,255,255,.2)}
-.stat strong{display:block;font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-.045em;line-height:1;margin-bottom:10px}
-.stat strong em{font-style:normal;color:#9cc0ff}
-.stat span{font-size:.95rem;color:rgba(255,255,255,.78)}
-
-/* entries */
 .xp{display:grid;gap:18px}
 .card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:30px;transition:border-color .25s,box-shadow .25s,transform .25s}
 .card:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:0 16px 40px rgba(15,23,42,.07);transform:translateY(-2px)}
@@ -250,7 +237,7 @@ footer a:hover{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.avail i{animation:none}}
 
 @media (max-width:960px){
-  .about,.impact-in,.contact{grid-template-columns:1fr;gap:32px}
+  .about,.contact{grid-template-columns:1fr;gap:32px}
   .skills,.events{grid-template-columns:1fr 1fr}
   .contact{padding:48px 36px}
 }
@@ -267,11 +254,6 @@ footer a:hover{color:var(--accent)}
   .meta svg{display:none}
   section{padding:72px 0}
   .sh{margin-bottom:36px}
-  .impact{padding:48px 0}
-  .stat{padding:0 12px}
-  .stat:first-child{padding-left:0}
-  .stat strong{font-size:2rem}
-  .stat span{font-size:.8rem;display:block;line-height:1.4}
   .card{padding:22px}
   .xcard{grid-template-columns:auto 1fr;gap:4px 16px}
   .xcard .ico{width:44px;height:44px;grid-row:span 2}
@@ -292,7 +274,7 @@ footer a:hover{color:var(--accent)}
   .skill{grid-template-columns:1fr;gap:8px}
   .cgrid{grid-template-columns:1fr}
 }
-@media (max-width:480px){.badge{padding:9px 12px;gap:9px;border-radius:13px}.badge b{font-size:.82rem}.badge small{font-size:.68rem}.badge .bi{width:30px;height:30px}.badge .num{font-size:1.15rem}.b1{left:-22px}.b2{right:-22px;bottom:2%}.b3{left:-14px}.wrap{padding:0 16px}.btn{flex:1 1 100%}.stat{padding:0 8px}.stat strong{font-size:1.6rem}}
+@media (max-width:480px){.badge{padding:9px 12px;gap:9px;border-radius:13px}.badge b{font-size:.82rem}.badge small{font-size:.68rem}.badge .bi{width:30px;height:30px}.b1{left:-22px}.b2{display:none}.b3{left:-14px}.wrap{padding:0 16px}.btn{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -345,7 +327,7 @@ footer a:hover{color:var(--accent)}
     <div class="portrait">
       <div class="p-card"><img src="assets/portrait.webp" alt="Portrait of Shamel Fatima C. Perono" width="1088" height="720"></div>
       <div class="badge b1"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ITS Certified</b><small>Cybersecurity</small></div></div>
-      <div class="badge b2"><span class="num">150+</span><div><b>Bookings</b><small>processed live</small></div></div>
+      <div class="badge b2"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><div><b>BS Information Technology</b><small>National University – Baliwag</small></div></div>
       <div class="badge b3"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><div><b>Full-Stack &amp; Mobile</b><small>React · Node.js · Flutter</small></div></div>
     </div>
   </div>
@@ -368,20 +350,6 @@ footer a:hover{color:var(--accent)}
       </div>
     </div>
   </section>
-
-  <div class="impact">
-    <div class="wrap impact-in">
-      <div class="reveal">
-        <p class="impact-label">Impact at S&amp;R Rentals</p>
-        <h3>Results from a platform used by a real business.</h3>
-      </div>
-      <div class="stats reveal">
-        <div class="stat"><strong>150<em>+</em></strong><span>Bookings processed</span></div>
-        <div class="stat"><strong>₱60K<em>+</em></strong><span>Monthly revenue tracked</span></div>
-        <div class="stat"><strong>50<em>%</em></strong><span>Faster booking turnaround</span></div>
-      </div>
-    </div>
-  </div>
 
   <section id="experience" class="alt">
     <div class="wrap">
@@ -436,9 +404,9 @@ footer a:hover{color:var(--accent)}
             <h3>S&amp;R Rentals</h3>
             <p class="pitch">A booking and operations platform for a camera rental business, replacing a manual Google Forms process.</p>
             <ul class="wins">
-              <li><span><strong>150+ bookings</strong> processed and <strong>₱60,000+</strong> in monthly revenue tracked</span></li>
-              <li><span><strong>50% faster</strong> booking turnaround</span></li>
-              <li><span>Admin analytics dashboard, JWT authentication, and a MongoDB to Supabase migration</span></li>
+              <li><span><strong>Online booking flow</strong> with availability checking and booking tracking for customers</span></li>
+              <li><span><strong>Admin analytics dashboard</strong> for managing bookings and business operations</span></li>
+              <li><span><strong>JWT authentication</strong> and a flexible data layer that enabled a MongoDB to Supabase migration</span></li>
             </ul>
             <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Vercel Serverless</span><span class="tag">Supabase</span><span class="tag">MongoDB</span><span class="tag">GA4</span></div>
           </div>
