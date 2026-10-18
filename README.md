@@ -2,6 +2,8 @@
 
 Personal portfolio of Shamel Fatima C. Perono — BSIT student, full-stack & mobile developer, and ITS Cybersecurity certified.
 
+**Live:** https://shamelfatimaperono-portfolio.vercel.app
+
 Static site: a single `index.html` plus `assets/` (no build step).
 
 ## Run locally
