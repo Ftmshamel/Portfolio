@@ -158,6 +158,7 @@ h2{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
 .wins li{display:flex;gap:10px;color:var(--ink-2);font-size:.95rem}
 .wins li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e40af' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
 .wins strong{color:var(--ink);font-weight:600}
+[data-theme="dark"] .wins li::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237aa7ff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E")}
 .links-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .links-row .btn{padding:9px 16px;font-size:.9rem}
 .live{font-size:.72rem;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--live);background:var(--live-bg);padding:3px 10px;border-radius:999px;white-space:nowrap}
@@ -165,6 +166,25 @@ h2{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-weight:500}
 .tag.plain{background:var(--bg-soft);color:var(--ink-2);border:1px solid var(--line)}
+
+/* earlier work */
+.journey{position:relative;display:grid;gap:28px;padding-left:36px}
+.journey::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--line))}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-36px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:4px solid var(--accent)}
+.year{font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.year span{color:var(--ink-3);font-weight:600;margin-left:6px}
+.old{display:grid;grid-template-columns:auto 1fr;gap:22px;border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--bg);transition:border-color .2s,box-shadow .2s}
+.old:hover{border-color:var(--ink-3);box-shadow:0 10px 28px rgba(15,23,42,.06)}
+.old .icon{width:64px;height:64px;border-radius:16px;background:var(--bg-soft);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.old .icon img{width:52px;height:52px}
+.old .icon.java{background:linear-gradient(135deg,#f89820,#e76f00);border:0;color:#fff;font-weight:800;font-size:.95rem;letter-spacing:.02em}
+.old h3{font-size:1.15rem;font-weight:600;margin-bottom:4px}
+.old .pitch{margin-bottom:12px;font-size:.96rem}
+.old .wins{margin-bottom:16px}
+.term{background:#0f172a;border:1px solid var(--line);color:#e2e8f0;border-radius:10px;padding:14px 16px;font:500 .78rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;margin-bottom:16px;overflow-x:auto;white-space:pre}
+.term .c{color:#94a3b8}.term .g{color:#4ade80}.term .y{color:#fbbf24}
+.private{font-size:.8rem;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px;margin-top:14px}
 
 /* skills */
 .skill{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:start}
@@ -205,6 +225,10 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
   .shot{padding:18px 18px 0;border-radius:16px}
   .case h3{font-size:1.45rem}
   .projects{gap:56px}
+  .old{grid-template-columns:1fr;gap:14px;padding:20px}
+  .journey{padding-left:28px}
+  .journey::before{left:6px}
+  .step::before{left:-28px;width:16px;height:16px;border-width:3px}
   .skill{grid-template-columns:1fr;gap:8px}
   .cgrid{grid-template-columns:1fr}
 }
@@ -381,6 +405,56 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="earlier">
+    <div class="wrap">
+      <h2>Earlier Work</h2>
+      <p class="pitch" style="margin-top:-14px;margin-bottom:32px">Projects from my first years in college, showing how my skills grew over time.</p>
+      <div class="journey">
+        <div class="step">
+          <p class="year">3rd Year <span>2025 – 2026</span></p>
+          <article class="old">
+            <div class="icon"><img src="assets/peracheck-logo.png" alt="PeraCheck logo" width="160" height="160"></div>
+            <div>
+              <h3>PeraCheck</h3>
+              <p class="pitch">A goal-based savings and expense tracker built for Filipino users. Instead of only showing where money went, it focuses on where money is going.</p>
+              <ul class="wins">
+                <li><span><strong>Goal Vault</strong> with target amounts, deadlines, and progress bars</span></li>
+                <li><span><strong>Smart tagging</strong> that links each transaction to a savings goal</span></li>
+                <li><span><strong>Analytics charts</strong> for income, expenses, and categories, with offline storage</span></li>
+              </ul>
+              <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Hive</span><span class="tag">fl_chart</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="step">
+          <p class="year">1st Year <span>2023 – 2024</span></p>
+          <article class="old">
+            <div class="icon java">Java</div>
+            <div>
+              <h3>Java Programming Foundations</h3>
+              <p class="pitch">Console programs and machine problems from my first two terms, where I learned logic, loops, and string processing.</p>
+<div class="term"><span class="c">$ java Gradecalcu</span>
+<span class="y">******* GRADE CALCULATOR *******</span>
+<span class="y">[**INTRODUCTION TO  COMPUTING**]</span>
+Quiz#1 (20)= <span class="g">18</span>
+Quiz#2 (20)= <span class="g">19</span></div>
+              <ul class="wins">
+                <li><span><strong>Grade calculator</strong> and <strong>item price lookup</strong> using conditionals and switch statements</span></li>
+                <li><span><strong>String machine problems</strong>: name abbreviation, vowel counter, and letter frequency</span></li>
+                <li><span><strong>Number programs</strong>: Fibonacci sequence and prime number checker</span></li>
+              </ul>
+              <div class="tags"><span class="tag">Java</span><span class="tag">OOP Basics</span><span class="tag">Control Structures</span></div>
+              <div class="links-row">
+                <a class="btn" href="https://github.com/Ftmshamel/NU_BALIWAG-1stTerm-JAVA" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>1st Term Code</a>
+                <a class="btn" href="https://github.com/Ftmshamel/NU_BALIWAG-2ndTerm-JAVA" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>2nd Term Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </section>
