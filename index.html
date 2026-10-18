@@ -113,10 +113,14 @@ h2{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
 .about p+p{margin-top:14px}
 
 /* highlights */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-.stat{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:20px;text-align:center}
-.stat strong{display:block;font-size:1.6rem;font-weight:700;color:var(--accent);letter-spacing:-.02em}
-.stat span{font-size:.85rem;color:var(--ink-2)}
+.impact{margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.impact-label{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:0 28px;border-left:1px solid var(--line)}
+.stat:first-child{padding-left:0;border-left:0}
+.stat strong{display:block;font-size:2.4rem;font-weight:700;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
+.stat strong em{font-style:normal;color:var(--accent)}
+.stat span{font-size:.9rem;color:var(--ink-2)}
 
 /* entries */
 .entry{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:24px 0;border-top:1px solid var(--line)}
@@ -172,9 +176,9 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
   .meta{flex-direction:column;align-items:center;gap:2px}
   .meta svg{display:none}
   section{padding:48px 0}
-  .stats{grid-template-columns:1fr;gap:10px}
-  .stat{display:flex;align-items:center;gap:16px;text-align:left;padding:14px 18px}
-  .stat strong{min-width:84px;font-size:1.35rem}
+  .stat{padding:0 12px}
+  .stat strong{font-size:1.6rem}
+  .stat span{font-size:.8rem;display:block;line-height:1.4}
   .entry{grid-template-columns:1fr}
   .entry .date{text-align:left;order:-1}
   .project{padding:20px}
@@ -273,10 +277,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
       <h2>About</h2>
       <p>I am a fourth-year Information Technology student who develops web and mobile applications. I built and maintain the booking platform of S&amp;R Photography Equipment Rental, where I also serve as Operations Manager.</p>
       <p>My work centers on React, Node.js, Flutter, and cloud databases, with a strong focus on secure design. I am certified as an Information Technology Specialist in Cybersecurity.</p>
-      <div class="stats">
-        <div class="stat"><strong>150+</strong><span>Bookings processed</span></div>
-        <div class="stat"><strong>₱60K+</strong><span>Monthly revenue tracked</span></div>
-        <div class="stat"><strong>50%</strong><span>Faster booking turnaround</span></div>
+      <div class="impact">
+        <p class="impact-label">Impact at S&amp;R Rentals</p>
+        <div class="stats">
+          <div class="stat"><strong>150<em>+</em></strong><span>Bookings processed</span></div>
+          <div class="stat"><strong>₱60K<em>+</em></strong><span>Monthly revenue tracked</span></div>
+          <div class="stat"><strong>50<em>%</em></strong><span>Faster booking turnaround</span></div>
+        </div>
       </div>
     </div>
   </section>
