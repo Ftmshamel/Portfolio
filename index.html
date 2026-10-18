@@ -186,6 +186,21 @@ h2{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
 .term .c{color:#94a3b8}.term .g{color:#4ade80}.term .y{color:#fbbf24}
 .private{font-size:.8rem;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px;margin-top:14px}
 
+/* events */
+.events{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.event{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:18px;transition:border-color .2s,transform .2s}
+.event:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+.event .mark{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:-.02em}
+.event .mark.m-aws{font-size:.8rem;color:#ff9900}
+[data-theme="dark"] .event .mark.m-notion{color:#191919}
+.event h3{font-size:1rem;font-weight:600;line-height:1.35;margin-bottom:4px}
+.event p{font-size:.85rem;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.event p svg{flex:none;color:var(--ink-3)}
+.m-notion{background:#191919}[data-theme="dark"] .m-notion{background:#f5f5f5;color:#191919}
+.m-google{background:linear-gradient(135deg,#4285f4,#34a853)}
+.m-aws{background:#232f3e;color:#ff9900}[data-theme="dark"] .m-aws{background:#2c3a4d}
+.m-figma{background:linear-gradient(135deg,#f24e1e,#a259ff)}
+
 /* skills */
 .skill{display:grid;grid-template-columns:180px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line);align-items:start}
 .skill:first-child{border-top:0;padding-top:0}
@@ -337,13 +352,28 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
 
   <section id="experience">
     <div class="wrap">
-      <h2>Experience</h2>
+      <h2>Experience &amp; Leadership</h2>
       <div class="entry">
         <div><h3>Operations Manager</h3><p class="org">S&amp;R Photography Equipment Rental · Student-led business</p></div>
         <p class="date">2026 – Present</p>
         <ul>
           <li>Oversee client bookings, contracts, digital assets, and equipment logistics.</li>
           <li>Manage social media and content production, including scheduling, engagement, and performance tracking.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div><h3>Class Representative</h3><p class="org">BS Information Technology · National University – Baliwag</p></div>
+        <p class="date">1st Year – 2nd Year</p>
+        <ul>
+          <li>Elected class representative for six consecutive terms, from 1st Year, 1st Term to 2nd Year, 3rd Term.</li>
+          <li>Served as the main point of contact between the class, faculty, and school administration.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div><h3>Group and Class Leader</h3><p class="org">Academic projects and class activities</p></div>
+        <p class="date">1st Year – Present</p>
+        <ul>
+          <li>Regularly chosen to lead group projects and class activities, including planning tasks, assigning roles, and making sure work is delivered on time.</li>
         </ul>
       </div>
     </div>
@@ -471,6 +501,20 @@ Quiz#2 (20)= <span class="g">19</span></div>
         <div><h3>Information Technology Specialist (ITS) – Cybersecurity</h3><p class="org">Certiport, a Pearson VUE Business</p></div>
         <p class="date">June 2026</p>
         <p class="body">Credential ID: nxnS-DkqB · Valid until June 2031</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <h2>Seminars &amp; Events</h2>
+      <p class="pitch" style="margin-top:-14px;margin-bottom:28px">Industry seminars, webinars, and tech events I have attended to keep learning outside the classroom.</p>
+      <div class="events">
+        <div class="event"><span class="mark m-google">G</span><div><h3>Google Tech Event</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Onsite at the Google office</p></div></div>
+        <div class="event"><span class="mark m-aws">aws</span><div><h3>AWS Tech Event</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Onsite at the AWS office</p></div></div>
+        <div class="event"><span class="mark m-aws">aws</span><div><h3>AWS Campus Event</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>National University – Baliwag</p></div></div>
+        <div class="event"><span class="mark m-notion">N</span><div><h3>Notion Webinar</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Online</p></div></div>
+        <div class="event"><span class="mark m-figma">F</span><div><h3>Figma Event</h3><p>Design and prototyping</p></div></div>
       </div>
     </div>
   </section>
