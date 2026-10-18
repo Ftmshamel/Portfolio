@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shamel Fatima Perono</title>
+<meta name="description" content="Portfolio of Shamel Fatima C. Perono — BS Information Technology student, full-stack web and mobile developer, ITS Cybersecurity certified.">
+<meta property="og:title" content="Shamel Fatima Perono — Full-Stack & Mobile Developer">
+<meta property="og:description" content="BSIT student at National University – Baliwag building production web and mobile apps with React, Node.js, Flutter and Supabase.">
+<meta property="og:image" content="assets/profile.jpg">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f1; --surface:#ffffff; --surface-2:#efece6;
+  --ink:#16181d; --ink-2:#4a4f5a; --ink-3:#7b808b;
+  --line:#e2ded6; --accent:#9b2c3a; --accent-soft:#f4e4e6;
+  --shadow:0 1px 2px rgba(20,20,30,.04),0 8px 24px rgba(20,20,30,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111317; --surface:#181b21; --surface-2:#1f232a;
+    --ink:#eceae6; --ink-2:#b4b7be; --ink-3:#868a93;
+    --line:#2a2e36; --accent:#e47887; --accent-soft:#3a2328;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111317; --surface:#181b21; --surface-2:#1f232a;
+  --ink:#eceae6; --ink-2:#b4b7be; --ink-3:#868a93;
+  --line:#2a2e36; --accent:#e47887; --accent-soft:#3a2328;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.15}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:Fraunces,serif;font-weight:600;font-size:1.15rem}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:28px;align-items:center;font-size:.92rem;color:var(--ink-2)}
+.links a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink-2);width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+.theme:hover{color:var(--ink);border-color:var(--ink-3)}
+@media (max-width:760px){.links a{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding:88px 0 72px}
+.eyebrow{color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lead{font-size:1.12rem;color:var(--ink-2);max-width:56ch;margin-bottom:32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid var(--line);transition:.2s}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:not(.primary):hover{border-color:var(--ink)}
+.portrait{position:relative;justify-self:center;width:100%;max-width:340px}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:20px;display:block;box-shadow:var(--shadow);position:relative;z-index:1}
+.portrait::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--accent);border-radius:20px;z-index:0}
+.badge{position:absolute;z-index:2;left:-22px;bottom:28px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:14px;padding:12px 16px;font-size:.85rem;display:flex;gap:10px;align-items:center}
+.badge b{display:block;font-weight:600}
+.badge small{color:var(--ink-3)}
+.dot{width:10px;height:10px;border-radius:50%;background:#2f9e6a;box-shadow:0 0 0 4px color-mix(in srgb,#2f9e6a 25%,transparent)}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:48px;padding:56px 0}
+  .portrait{order:-1;max-width:260px}
+  .badge{left:-10px}
+}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:28px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{display:block;font-family:Fraunces,serif;font-size:2rem;font-weight:600;color:var(--ink)}
+.stat span{color:var(--ink-3);font-size:.88rem}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* sections */
+section{padding:96px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.head h2{font-size:clamp(1.9rem,3.6vw,2.6rem)}
+.head p{color:var(--ink-2);max-width:46ch}
+.label{color:var(--accent);margin-bottom:10px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about p{color:var(--ink-2);margin-bottom:16px}
+.about p strong{color:var(--ink);font-weight:600}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:8px 26px}
+.fact{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.fact:last-child{border-bottom:0}
+.fact span:first-child{color:var(--ink-3)}
+.fact span:last-child{text-align:right;font-weight:500}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}}
+
+/* projects */
+.projects{display:grid;gap:24px}
+.project{display:grid;grid-template-columns:260px 1fr;gap:36px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px;transition:.25s}
+.project:hover{border-color:var(--ink-3);box-shadow:var(--shadow);transform:translateY(-2px)}
+.project.featured{border-color:var(--accent)}
+.pnum{color:var(--ink-3)}
+.project h3{font-size:1.55rem;margin:10px 0 8px}
+.kind{color:var(--ink-2);font-size:.95rem}
+.flag{display:inline-block;margin-top:16px;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:999px}
+.project ul{list-style:none;display:grid;gap:12px;margin-bottom:22px}
+.project li{color:var(--ink-2);padding-left:22px;position:relative}
+.project li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--accent)}
+.project li strong{color:var(--ink);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:.8rem;padding:5px 11px;border-radius:999px;background:var(--surface-2);color:var(--ink-2)}
+.metrics{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+.metrics div strong{font-family:Fraunces,serif;font-size:1.5rem;display:block;color:var(--accent)}
+.metrics div span{font-size:.8rem;color:var(--ink-3)}
+@media (max-width:860px){.project{grid-template-columns:1fr;gap:20px;padding:26px}}
+
+/* experience / timeline */
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:30px}
+.card .when{color:var(--ink-3);margin-bottom:12px}
+.card h3{font-size:1.3rem;margin-bottom:4px}
+.card .org{color:var(--accent);font-weight:500;margin-bottom:16px;font-size:.95rem}
+.card p,.card li{color:var(--ink-2);font-size:.95rem}
+.card ul{list-style:none;display:grid;gap:10px}
+.card li{padding-left:20px;position:relative}
+.card li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+.cred{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);display:grid;gap:6px;font-size:.88rem;color:var(--ink-3)}
+.cred b{color:var(--ink-2);font-weight:500}
+.course{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.skill h3{font-family:Inter,sans-serif;font-size:.98rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill h3 i{width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-style:normal;font-size:.85rem}
+@media (max-width:860px){.skills{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:28px;padding:64px 56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contact h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:14px}
+.contact p{opacity:.75}
+.clist{display:grid;gap:12px}
+.clist a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border:1px solid color-mix(in srgb,var(--bg) 22%,transparent);border-radius:14px;transition:.2s;font-size:.95rem;word-break:break-all}
+.clist a:hover{background:color-mix(in srgb,var(--bg) 10%,transparent)}
+.clist a span:first-child{opacity:.6;font-size:.82rem;white-space:nowrap}
+@media (max-width:860px){.contact{grid-template-columns:1fr;padding:40px 26px}}
+
+footer{padding:40px 0;color:var(--ink-3);font-size:.88rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:480px){.wrap{padding:0 16px}section{padding:72px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top">Shamel<span>.</span></a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="theme" id="theme" aria-label="Toggle color theme">◐</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="eyebrow mono">BS Information Technology · National University</p>
+        <h1>Hi, I'm Shamel. I build <em>web &amp; mobile apps</em> that run real businesses.</h1>
+        <p class="lead">Full-stack developer and ITS-certified cybersecurity specialist from Bulacan, Philippines. I design, ship and operate production platforms with React, Node.js, Flutter and Supabase.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View my work →</a>
+          <a class="btn" href="assets/CV-Perono-ShamelFatima.pdf" download>Download CV</a>
+          <a class="btn" href="mailto:shamelfatima.perono@gmail.com">Get in touch</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="assets/profile.jpg" alt="Portrait of Shamel Fatima Perono" width="800" height="800">
+        <div class="badge"><span class="dot"></span><div><b>Open to opportunities</b><small>Internships &amp; junior roles</small></div></div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><strong>150+</strong><span>bookings processed in production</span></div>
+      <div class="stat"><strong>₱60K+</strong><span>monthly revenue tracked</span></div>
+      <div class="stat"><strong>50%</strong><span>faster booking turnaround</span></div>
+      <div class="stat"><strong>3</strong><span>full-stack platforms shipped</span></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about reveal">
+      <div>
+        <p class="label mono">About me</p>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:22px">Developer by training, operator by experience.</h2>
+        <p>I'm a <strong>4th-year BS Information Technology student at National University – Baliwag</strong>, focused on building software that solves concrete problems for real users.</p>
+        <p>Beyond coursework, I run operations for <strong>S&amp;R Photography Equipment Rental</strong>, a student-led business — and built the booking platform that powers it. That mix of engineering and day-to-day operations shapes how I work: I build from actual user needs, measure results, and keep systems secure.</p>
+        <p>I'm certified in <strong>IT Specialist – Cybersecurity</strong> by Certiport (Pearson VUE), and I care about secure-by-default design: JWT auth, role-based access control and clean, decoupled architectures.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>Based in</span><span>San Ildefonso, Bulacan, PH</span></div>
+        <div class="fact"><span>Education</span><span>BSIT · 4th Year</span></div>
+        <div class="fact"><span>University</span><span>National University – Baliwag</span></div>
+        <div class="fact"><span>Certification</span><span>ITS – Cybersecurity</span></div>
+        <div class="fact"><span>Focus</span><span>Full-stack web · Mobile · Security</span></div>
+        <div class="fact"><span>Currently</span><span>Operations Manager, S&amp;R Rentals</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="label mono">Selected work</p><h2>Projects</h2></div>
+        <p>Production systems and full-stack builds spanning web, mobile, payments, maps and AI integrations.</p>
+      </div>
+      <div class="projects">
+
+        <article class="project featured reveal">
+          <div>
+            <p class="pnum mono">01 — Web platform</p>
+            <h3>S&amp;R Rentals</h3>
+            <p class="kind">Camera rental booking &amp; operations platform</p>
+            <span class="flag mono">In production</span>
+          </div>
+          <div>
+            <ul>
+              <li>Deployed a production booking platform for a camera rental business, <strong>processing 150+ bookings</strong> and tracking <strong>₱60,000+ in monthly revenue</strong>.</li>
+              <li>Replaced a manual Google Forms workflow and <strong>cut booking turnaround time by 50%</strong>.</li>
+              <li>Built the booking flow and an admin analytics dashboard on Vercel serverless APIs with JWT auth, and a swappable data layer enabling a <strong>MongoDB → Supabase migration</strong>.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">React.js</span><span class="tag">Vite</span><span class="tag">Node.js</span><span class="tag">Vercel Serverless</span><span class="tag">Supabase (PostgreSQL)</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">React Router</span><span class="tag">Canvas API</span><span class="tag">Google Analytics 4</span>
+            </div>
+            <div class="metrics">
+              <div><strong>150+</strong><span>bookings</span></div>
+              <div><strong>₱60K+</strong><span>monthly revenue</span></div>
+              <div><strong>−50%</strong><span>turnaround time</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div>
+            <p class="pnum mono">02 — Mobile app</p>
+            <h3>AgriLink</h3>
+            <p class="kind">Farm-to-table mobile logistics platform</p>
+          </div>
+          <div>
+            <ul>
+              <li>Developed a cross-platform app in <strong>Flutter &amp; Dart</strong> for farm-to-table logistics, supporting <strong>multi-role workflows</strong> for farmers, buyers and delivery riders.</li>
+              <li>Integrated <strong>Xendit</strong> for secure payments and <strong>Leaflet</strong> for interactive mapping, route planning and <strong>sub-second live order tracking</strong> — shipped as an Android APK.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase Firestore</span><span class="tag">Firebase Auth</span><span class="tag">Xendit</span><span class="tag">Leaflet API</span><span class="tag">Android SDK</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div>
+            <p class="pnum mono">03 — Web platform · AI</p>
+            <h3>Parish Management Platform</h3>
+            <p class="kind">AI-enhanced administrative system</p>
+          </div>
+          <div>
+            <ul>
+              <li>Built a <strong>decoupled</strong> administrative platform with a React.js frontend and Express/Node.js backend, secured with <strong>JWT-based Role-Based Access Control</strong>.</li>
+              <li>Integrated <strong>Google Document AI</strong> for document verification and <strong>GROQ AI</strong> for natural-language queries, deployed fully on Vercel.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MySQL</span><span class="tag">JWT · RBAC</span><span class="tag">Google Document AI</span><span class="tag">GROQ AI</span><span class="tag">SMTP</span><span class="tag">Vercel</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="label mono">Background</p><h2>Experience &amp; Education</h2></div>
+      </div>
+      <div class="grid2">
+        <div class="card reveal">
+          <p class="when mono">2026 — Present</p>
+          <h3>Operations Manager</h3>
+          <p class="org">S&amp;R Photography Equipment Rental · Student-led business</p>
+          <ul>
+            <li>Managed end-to-end operations: client bookings, digital asset management, contract administration and full logistics pipelines.</li>
+            <li>Directed brand social media and digital content production — scheduling, user engagement and data tracking to optimize online presence.</li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <p class="when mono">Current · 4th Year</p>
+          <h3>BS Information Technology</h3>
+          <p class="org">National University – Baliwag · Baliwag City, Bulacan</p>
+          <p>Relevant coursework:</p>
+          <div class="course">
+            <span class="tag">Data Structures &amp; Algorithms</span><span class="tag">Web &amp; Mobile App Development</span><span class="tag">Database Management</span><span class="tag">Object-Oriented Programming</span><span class="tag">Information Security</span><span class="tag">Network &amp; Application Security</span>
+          </div>
+        </div>
+        <div class="card reveal" style="grid-column:1/-1">
+          <p class="when mono">Certification · June 2026</p>
+          <h3>Information Technology Specialist (ITS) — Cybersecurity</h3>
+          <p class="org">Certiport · A Pearson VUE Business</p>
+          <div class="cred">
+            <span><b>Credential ID:</b> nxnS-DkqB</span>
+            <span><b>Valid:</b> June 2026 – June 2031</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="label mono">Toolkit</p><h2>Skills</h2></div>
+        <p>The languages, frameworks and practices I use to take a product from idea to production.</p>
+      </div>
+      <div class="skills">
+        <div class="skill reveal"><h3><i>{ }</i>Languages</h3><div class="tags"><span class="tag">JavaScript</span><span class="tag">Dart</span><span class="tag">SQL</span><span class="tag">HTML5</span><span class="tag">CSS3</span></div></div>
+        <div class="skill reveal"><h3><i>◇</i>Frameworks</h3><div class="tags"><span class="tag">React.js</span><span class="tag">Express.js</span><span class="tag">Flutter</span><span class="tag">Node.js</span></div></div>
+        <div class="skill reveal"><h3><i>▤</i>Databases</h3><div class="tags"><span class="tag">MySQL</span><span class="tag">Firebase Firestore</span><span class="tag">Supabase / PostgreSQL</span><span class="tag">MongoDB</span></div></div>
+        <div class="skill reveal"><h3><i>☁</i>Cloud &amp; Hosting</h3><div class="tags"><span class="tag">Vercel</span><span class="tag">Firebase Hosting</span><span class="tag">Serverless Functions</span></div></div>
+        <div class="skill reveal"><h3><i>⌘</i>Tools</h3><div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Android SDK</span><span class="tag">Figma</span><span class="tag">Canva</span></div></div>
+        <div class="skill reveal"><h3><i>⛨</i>Architecture &amp; Security</h3><div class="tags"><span class="tag">RESTful APIs</span><span class="tag">MVC</span><span class="tag">Decoupled</span><span class="tag">Serverless</span><span class="tag">RBAC</span><span class="tag">Multi-Role Workflows</span><span class="tag">Project Management</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div>
+          <p class="mono" style="opacity:.6;margin-bottom:12px">Contact</p>
+          <h2>Let's build something together.</h2>
+          <p>I'm open to internships, junior developer roles and freelance projects. The fastest way to reach me is by email.</p>
+        </div>
+        <div class="clist">
+          <a href="mailto:shamelfatima.perono@gmail.com"><span>Email</span>shamelfatima.perono@gmail.com</a>
+          <a href="tel:+639120161865"><span>Phone</span>+63 912 016 1865</a>
+          <a href="https://linkedin.com/in/shamel-fatima-perono" target="_blank" rel="noopener"><span>LinkedIn</span>in/shamel-fatima-perono ↗</a>
+          <a href="https://github.com/Ftmshamel" target="_blank" rel="noopener"><span>GitHub</span>github.com/Ftmshamel ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© <span id="yr">2026</span> Shamel Fatima C. Perono</span>
+  <span>San Ildefonso, Bulacan, Philippines</span>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const root = document.documentElement, btn = document.getElementById('theme');
+try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+btn.addEventListener('click', () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+});
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
