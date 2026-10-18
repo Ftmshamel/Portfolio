@@ -22,19 +22,12 @@
   --bg:#ffffff; --bg-soft:#f8fafc; --ink:#0f172a; --ink-2:#475569; --ink-3:#94a3b8;
   --line:#e2e8f0; --accent:#1e40af; --accent-hover:#1e3a8a; --accent-soft:#eff4ff; --on-accent:#fff;
   --nav-bg:rgba(255,255,255,.9); --live:#047857; --live-bg:#ecfdf5;
-  /* scene */
-  --wall:#efe9df; --wall-2:#e6ddcf; --sky1:#7cc0ff; --sky2:#d9efff; --frame:#ffffff; --sill:#d8cdbb;
-  --city:#a9c3dc; --city-2:#c4d7ea; --desk:#a47551; --desk-2:#8a5f40; --laptop:#c9ced6; --laptop-2:#aeb4bd;
-  --leaf:#4f8a5b; --pot:#d9825b; --mug:#ffffff;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
   --bg:#0b1120; --bg-soft:#111a2e; --ink:#e6e9ef; --ink-2:#a3adbf; --ink-3:#6b768a;
   --line:#1e293b; --accent:#7aa7ff; --accent-hover:#a5c3ff; --accent-soft:#16233f; --on-accent:#0b1120;
   --nav-bg:rgba(11,17,32,.88); --live:#4ade80; --live-bg:#0f2a1c;
-  --wall:#1a2236; --wall-2:#151c2e; --sky1:#050a1f; --sky2:#1b2a57; --frame:#2a3550; --sill:#232d45;
-  --city:#0e1630; --city-2:#16204060; --desk:#4a3426; --desk-2:#38271c; --laptop:#59606d; --laptop-2:#454b57;
-  --leaf:#2f5a3b; --pot:#8a4f37; --mug:#cfd6e3;
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -68,34 +61,23 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 @keyframes pulse{50%{box-shadow:0 0 0 7px color-mix(in srgb,currentColor 0%,transparent)}}
 .hello{color:var(--ink-2);font-weight:500;font-size:1.1rem;margin-bottom:4px}
 
-/* office scene */
-.scene{position:relative;width:100%;max-width:440px;aspect-ratio:10/11;justify-self:center;border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(15,23,42,.14);isolation:isolate}
-.scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.scene stop,.scene rect,.scene path,.scene circle,.scene ellipse{transition:fill .8s,stop-color .8s,opacity .8s}
-.scene .me{position:absolute;left:-.92%;bottom:7%;width:101.84%;max-width:none;height:auto;z-index:1;filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));transition:filter .8s}
-[data-theme="dark"] .scene .me{filter:drop-shadow(0 10px 18px rgba(0,0,0,.4)) brightness(.9)}
-.scene .me{transition:filter .8s,opacity .6s ease .25s}
-.scene .me.night{opacity:0}
-[data-theme="dark"] .scene .me.day{opacity:0}
-[data-theme="dark"] .scene .me.night{opacity:1}
-.scene .front{z-index:2}
-.sun,.moon,.stars,.clouds,.lit,.lampglow{transition:transform 1s cubic-bezier(.6,.05,.3,1),opacity .9s}
-.moon,.stars,.lit,.lampglow{opacity:0}
-.moon{transform:translateY(120px)}
-[data-theme="dark"] .sun{transform:translateY(130px);opacity:0}
-[data-theme="dark"] .clouds{opacity:0;transform:translateX(40px)}
-[data-theme="dark"] .moon{transform:none;opacity:1}
-[data-theme="dark"] .stars,[data-theme="dark"] .lit,[data-theme="dark"] .lampglow{opacity:1}
-.zzz{opacity:0;transition:opacity .6s}
-.zzz text{font:700 22px Inter,sans-serif;fill:#d6e2ff}
-[data-theme="dark"] .zzz{opacity:1;transition-delay:.6s}
-[data-theme="dark"] .zzz text{animation:zz 3s ease-in-out infinite}
-.zzz text:nth-child(2){animation-delay:.5s!important}.zzz text:nth-child(3){animation-delay:1s!important}
-@keyframes zz{0%{opacity:0;transform:translate(0,8px)}30%{opacity:1}100%{opacity:0;transform:translate(-10px,-16px)}}
-.stars circle{animation:tw 3s ease-in-out infinite}
-.stars circle:nth-child(2n){animation-delay:1.2s}.stars circle:nth-child(3n){animation-delay:2s}
-@keyframes tw{50%{opacity:.25}}
-@media (prefers-reduced-motion:reduce){.stars circle,[data-theme="dark"] .zzz text{animation:none}}
+/* portrait */
+.portrait{position:relative;width:100%;max-width:450px;justify-self:center;aspect-ratio:1/1.06}
+.p-card{position:absolute;inset:0;border-radius:28px;overflow:hidden;background:linear-gradient(160deg,#1e3a8a 0%,#2563eb 55%,#60a5fa 100%);box-shadow:0 30px 60px -20px rgba(30,64,175,.45);isolation:isolate}
+[data-theme="dark"] .p-card{background:linear-gradient(160deg,#0c1631 0%,#1a3270 55%,#2f56b0 100%);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.p-card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.4px);background-size:18px 18px;mask-image:linear-gradient(to bottom,#000 0%,transparent 70%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 70%)}
+.p-card::after{content:"";position:absolute;left:50%;top:28%;width:85%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.35),transparent);z-index:0}
+.p-card img{position:absolute;left:-12.5%;bottom:0;width:125%;max-width:none;height:auto;z-index:1;filter:drop-shadow(0 12px 24px rgba(0,0,0,.25))}
+.badge{position:absolute;z-index:3;display:flex;align-items:center;gap:12px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 18px 40px -12px rgba(15,23,42,.28);animation:bob 6s ease-in-out infinite;white-space:nowrap}
+.badge b{display:block;font-size:.95rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.badge small{display:block;font-size:.75rem;color:var(--ink-2)}
+.badge .bi{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:none}
+.badge .num{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.b1{left:-34px;top:9%}
+.b2{right:-30px;top:40%;animation-delay:-2s}
+.b3{left:-18px;bottom:-22px;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.badge{animation:none}}
 .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:14px}
 .role{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--accent);font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
 .meta{color:var(--ink-2);font-size:.95rem;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 18px;margin-bottom:30px}
@@ -275,7 +257,7 @@ footer a:hover{color:var(--accent)}
 @media (max-width:860px){
   .hero{grid-template-columns:1fr;gap:36px;padding:36px 16px 64px}
   .trust{justify-content:center}
-  .scene{max-width:380px;order:-1}
+  .portrait{max-width:340px;order:-1;margin:0 28px}
   .hero-text{text-align:center}
   .meta,.cta,.social{justify-content:center}
 }
@@ -310,7 +292,7 @@ footer a:hover{color:var(--accent)}
   .skill{grid-template-columns:1fr;gap:8px}
   .cgrid{grid-template-columns:1fr}
 }
-@media (max-width:480px){.wrap{padding:0 16px}.btn{flex:1 1 100%}.stat{padding:0 8px}.stat strong{font-size:1.6rem}}
+@media (max-width:480px){.badge{padding:9px 12px;gap:9px;border-radius:13px}.badge b{font-size:.82rem}.badge small{font-size:.68rem}.badge .bi{width:30px;height:30px}.badge .num{font-size:1.15rem}.b1{left:-22px}.b2{right:-22px}.b3{left:-14px}.wrap{padding:0 16px}.btn{flex:1 1 100%}.stat{padding:0 8px}.stat strong{font-size:1.6rem}}
 </style>
 </head>
 <body>
@@ -360,47 +342,11 @@ footer a:hover{color:var(--accent)}
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Class Representative, 6 terms</span>
     </div>
     </div>
-    <div class="scene" aria-label="Illustration of Shamel in an office; the window shows the sun in light mode and the moon in dark mode">
-      <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--sky1)"/><stop offset="1" style="stop-color:var(--sky2)"/></linearGradient>
-          <radialGradient id="sunglow"><stop offset="0" stop-color="#ffe9a3" stop-opacity=".9"/><stop offset="1" stop-color="#ffe9a3" stop-opacity="0"/></radialGradient>
-          <radialGradient id="moonglow"><stop offset="0" stop-color="#cfe0ff" stop-opacity=".45"/><stop offset="1" stop-color="#cfe0ff" stop-opacity="0"/></radialGradient>
-          <radialGradient id="lamp"><stop offset="0" stop-color="#ffc874" stop-opacity=".55"/><stop offset="1" stop-color="#ffc874" stop-opacity="0"/></radialGradient>
-          <clipPath id="win"><rect x="34" y="34" width="332" height="246" rx="4"/></clipPath>
-        </defs>
-        <rect width="400" height="440" style="fill:var(--wall)"/>
-        <rect y="300" width="400" height="140" style="fill:var(--wall-2)"/>
-        <g clip-path="url(#win)">
-          <rect x="34" y="34" width="332" height="246" fill="url(#sky)"/>
-          <g class="stars" fill="#fff">
-            <circle cx="70" cy="62" r="1.4"/><circle cx="118" cy="96" r="1"/><circle cx="160" cy="54" r="1.3"/><circle cx="240" cy="70" r="1"/><circle cx="268" cy="140" r="1.2"/><circle cx="92" cy="140" r="1.1"/><circle cx="344" cy="168" r="1"/><circle cx="210" cy="118" r="1.2"/><circle cx="52" cy="190" r="1"/>
-          </g>
-          <g class="sun"><circle cx="318" cy="92" r="58" fill="url(#sunglow)"/><circle cx="318" cy="92" r="24" fill="#ffd34d"/></g>
-          <g class="moon"><circle cx="318" cy="92" r="52" fill="url(#moonglow)"/><path d="M330 72a24 24 0 1 0 8 34 19 19 0 1 1-8-34z" fill="#f2f0e1"/></g>
-          <g class="clouds" fill="#fff" opacity=".9"><ellipse cx="90" cy="88" rx="30" ry="10"/><ellipse cx="110" cy="80" rx="20" ry="11"/><ellipse cx="250" cy="150" rx="26" ry="8"/><ellipse cx="266" cy="144" rx="16" ry="9"/></g>
-          <g style="fill:var(--city-2)"><rect x="34" y="200" width="40" height="80"/><rect x="150" y="186" width="34" height="94"/><rect x="262" y="206" width="44" height="74"/></g>
-          <g style="fill:var(--city)"><rect x="60" y="178" width="46" height="102"/><rect x="112" y="214" width="34" height="66"/><rect x="186" y="168" width="40" height="112"/><rect x="232" y="196" width="30" height="84"/><rect x="304" y="184" width="40" height="96"/><rect x="344" y="220" width="24" height="60"/></g>
-          <g class="lit" fill="#ffd77a"><rect x="68" y="190" width="6" height="7"/><rect x="88" y="206" width="6" height="7"/><rect x="68" y="222" width="6" height="7"/><rect x="194" y="182" width="6" height="7"/><rect x="210" y="198" width="6" height="7"/><rect x="194" y="214" width="6" height="7"/><rect x="312" y="196" width="6" height="7"/><rect x="328" y="212" width="6" height="7"/><rect x="120" y="226" width="5" height="6"/><rect x="240" y="208" width="5" height="6"/></g>
-        </g>
-        <rect x="26" y="26" width="348" height="262" rx="8" fill="none" style="stroke:var(--frame)" stroke-width="12"/>
-        <rect x="196" y="32" width="8" height="250" style="fill:var(--frame)"/>
-        <rect x="32" y="152" width="336" height="7" style="fill:var(--frame)"/>
-        <rect x="16" y="286" width="368" height="12" rx="3" style="fill:var(--sill)"/>
-        <circle class="lampglow" cx="360" cy="370" r="120" fill="url(#lamp)"/>
-      </svg>
-      <img class="me day" src="assets/cutout.webp" alt="Shamel Fatima Perono" width="940" height="720">
-      <img class="me night" src="assets/cutout-night.webp" alt="" aria-hidden="true" width="940" height="720">
-      <svg class="front" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <g class="zzz"><text x="112" y="150" style="font-size:16px">z</text><text x="94" y="124" style="font-size:21px">z</text><text x="72" y="96" style="font-size:28px">Z</text></g>
-        <rect y="402" width="400" height="38" style="fill:var(--desk)"/>
-        <rect y="402" width="400" height="6" style="fill:var(--desk-2)"/>
-        <path d="M128 404 140 352h120l12 52z" style="fill:var(--laptop)"/>
-        <rect x="118" y="400" width="164" height="7" rx="3" style="fill:var(--laptop-2)"/>
-        <circle cx="200" cy="378" r="6" fill="#fff" opacity=".55"/>
-        <g><path d="M30 404 36 366h34l6 38z" style="fill:var(--pot)"/><path d="M53 368c-18-14-26-36-14-50 6 18 12 30 14 50z" style="fill:var(--leaf)"/><path d="M53 368c4-22 18-40 34-40-6 18-18 30-34 40z" style="fill:var(--leaf)"/><path d="M53 368c-6-26-2-48 10-58 2 20-2 38-10 58z" style="fill:var(--leaf)" opacity=".85"/></g>
-        <g><rect x="318" y="372" width="28" height="32" rx="4" style="fill:var(--mug)"/><path d="M346 380h6a7 7 0 0 1 0 14h-6" fill="none" style="stroke:var(--mug)" stroke-width="4"/></g>
-      </svg>
+    <div class="portrait">
+      <div class="p-card"><img src="assets/portrait.webp" alt="Portrait of Shamel Fatima C. Perono" width="1088" height="720"></div>
+      <div class="badge b1"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ITS Certified</b><small>Cybersecurity</small></div></div>
+      <div class="badge b2"><span class="num">150+</span><div><b>Bookings</b><small>processed live</small></div></div>
+      <div class="badge b3"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><div><b>Full-Stack &amp; Mobile</b><small>React · Node.js · Flutter</small></div></div>
     </div>
   </div>
 
