@@ -70,6 +70,10 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .scene stop,.scene rect,.scene path,.scene circle,.scene ellipse{transition:fill .8s,stop-color .8s,opacity .8s}
 .scene .me{position:absolute;left:-.92%;bottom:7%;width:101.84%;max-width:none;height:auto;z-index:1;filter:drop-shadow(0 10px 18px rgba(0,0,0,.18));transition:filter .8s}
 [data-theme="dark"] .scene .me{filter:drop-shadow(0 10px 18px rgba(0,0,0,.4)) brightness(.9)}
+.scene .me{transition:filter .8s,opacity .6s ease .25s}
+.scene .me.night{opacity:0}
+[data-theme="dark"] .scene .me.day{opacity:0}
+[data-theme="dark"] .scene .me.night{opacity:1}
 .scene .front{z-index:2}
 .sun,.moon,.stars,.clouds,.lit,.lampglow{transition:transform 1s cubic-bezier(.6,.05,.3,1),opacity .9s}
 .moon,.stars,.lit,.lampglow{opacity:0}
@@ -78,10 +82,16 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 [data-theme="dark"] .clouds{opacity:0;transform:translateX(40px)}
 [data-theme="dark"] .moon{transform:none;opacity:1}
 [data-theme="dark"] .stars,[data-theme="dark"] .lit,[data-theme="dark"] .lampglow{opacity:1}
+.zzz{opacity:0;transition:opacity .6s}
+.zzz text{font:700 22px Inter,sans-serif;fill:#d6e2ff}
+[data-theme="dark"] .zzz{opacity:1;transition-delay:.6s}
+[data-theme="dark"] .zzz text{animation:zz 3s ease-in-out infinite}
+.zzz text:nth-child(2){animation-delay:.5s!important}.zzz text:nth-child(3){animation-delay:1s!important}
+@keyframes zz{0%{opacity:0;transform:translate(0,8px)}30%{opacity:1}100%{opacity:0;transform:translate(-10px,-16px)}}
 .stars circle{animation:tw 3s ease-in-out infinite}
 .stars circle:nth-child(2n){animation-delay:1.2s}.stars circle:nth-child(3n){animation-delay:2s}
 @keyframes tw{50%{opacity:.25}}
-@media (prefers-reduced-motion:reduce){.stars circle{animation:none}}
+@media (prefers-reduced-motion:reduce){.stars circle,[data-theme="dark"] .zzz text{animation:none}}
 .hero h1{font-size:clamp(2rem,5vw,2.75rem);font-weight:700;letter-spacing:-.025em;line-height:1.15;margin-bottom:10px}
 .role{font-size:1.15rem;color:var(--accent);font-weight:600;margin-bottom:14px}
 .meta{color:var(--ink-2);font-size:.95rem;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px 18px;margin-bottom:30px}
@@ -243,8 +253,10 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
         <rect x="16" y="286" width="368" height="12" rx="3" style="fill:var(--sill)"/>
         <circle class="lampglow" cx="360" cy="370" r="120" fill="url(#lamp)"/>
       </svg>
-      <img class="me" src="assets/cutout.webp" alt="Shamel Fatima Perono" width="940" height="720">
+      <img class="me day" src="assets/cutout.webp" alt="Shamel Fatima Perono" width="940" height="720">
+      <img class="me night" src="assets/cutout-night.webp" alt="" aria-hidden="true" width="940" height="720">
       <svg class="front" viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g class="zzz"><text x="112" y="150" style="font-size:16px">z</text><text x="94" y="124" style="font-size:21px">z</text><text x="72" y="96" style="font-size:28px">Z</text></g>
         <rect y="402" width="400" height="38" style="fill:var(--desk)"/>
         <rect y="402" width="400" height="6" style="fill:var(--desk-2)"/>
         <path d="M128 404 140 352h120l12 52z" style="fill:var(--laptop)"/>
