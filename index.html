@@ -134,15 +134,34 @@ h2{font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
 .entry .body{color:var(--ink-2);font-size:.95rem}
 
 /* projects */
-.projects{display:grid;gap:20px}
-.project{border:1px solid var(--line);border-radius:12px;padding:28px;transition:.15s}
-.project:hover{border-color:#cbd5e1;box-shadow:0 8px 24px rgba(15,23,42,.06)}
-.ptop{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:4px}
-.project h3{font-size:1.15rem;font-weight:600}
-.live{font-size:.75rem;font-weight:600;color:var(--live);background:var(--live-bg);padding:3px 10px;border-radius:999px;white-space:nowrap}
-.project .sub{color:var(--ink-2);font-size:.95rem;margin-bottom:14px}
-.project ul{padding-left:18px;color:var(--ink-2);display:grid;gap:6px;margin-bottom:18px;font-size:.96rem}
-.project li::marker{color:var(--ink-3)}
+.projects{display:grid;gap:72px}
+.case{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.case:nth-child(even) .shot{order:2}
+.shot{position:relative;border-radius:20px;padding:28px 28px 0;overflow:hidden;background:var(--tint);isolation:isolate}
+.shot::before{content:"";position:absolute;inset:auto -20% -40% -20%;height:70%;background:radial-gradient(closest-side,var(--glow),transparent);z-index:-1}
+.frame{border-radius:10px 10px 0 0;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(15,23,42,.18);transform:translateY(6px);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.frame .bar{height:26px;background:#eef1f5;display:flex;align-items:center;gap:6px;padding:0 12px}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#d4d9e0}
+.frame .bar i:first-child{background:#ff6b6b}.frame .bar i:nth-child(2){background:#ffc04d}.frame .bar i:nth-child(3){background:#3ecf6e}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.case:hover .frame{transform:translateY(-4px)}
+.c-snr{--tint:linear-gradient(135deg,#f3f1ec,#e4e0d6);--glow:rgba(255,255,255,.9)}
+.c-agri{--tint:linear-gradient(135deg,#2f6b2a,#76a83a);--glow:rgba(255,224,130,.55)}
+.c-parish{--tint:linear-gradient(135deg,#e9f0e4,#d6e88f);--glow:rgba(255,255,255,.8)}
+[data-theme="dark"] .c-snr{--tint:linear-gradient(135deg,#1c2232,#283044);--glow:rgba(122,167,255,.18)}
+[data-theme="dark"] .c-parish{--tint:linear-gradient(135deg,#1d2a22,#3b4d22);--glow:rgba(214,232,143,.18)}
+.kicker{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.kicker b{color:var(--accent);font-weight:700}
+.case h3{font-size:1.75rem;font-weight:700;letter-spacing:-.02em;line-height:1.2;margin-bottom:10px}
+.pitch{color:var(--ink-2);font-size:1.02rem;margin-bottom:18px}
+.wins{list-style:none;display:grid;gap:10px;margin-bottom:20px}
+.wins li{display:flex;gap:10px;color:var(--ink-2);font-size:.95rem}
+.wins li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e40af' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.wins strong{color:var(--ink);font-weight:600}
+.links-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.links-row .btn{padding:9px 16px;font-size:.9rem}
+.live{font-size:.72rem;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--live);background:var(--live-bg);padding:3px 10px;border-radius:999px;white-space:nowrap}
+.team{font-size:.72rem;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--ink-2);background:var(--bg-soft);border:1px solid var(--line);padding:2px 9px;border-radius:999px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent);font-weight:500}
 .tag.plain{background:var(--bg-soft);color:var(--ink-2);border:1px solid var(--line)}
@@ -181,7 +200,11 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
   .stat span{font-size:.8rem;display:block;line-height:1.4}
   .entry{grid-template-columns:1fr}
   .entry .date{text-align:left;order:-1}
-  .project{padding:20px}
+  .case{grid-template-columns:1fr;gap:24px}
+  .case:nth-child(even) .shot{order:0}
+  .shot{padding:18px 18px 0;border-radius:16px}
+  .case h3{font-size:1.45rem}
+  .projects{gap:56px}
   .skill{grid-template-columns:1fr;gap:8px}
   .cgrid{grid-template-columns:1fr}
 }
@@ -306,33 +329,57 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:v
     <div class="wrap">
       <h2>Projects</h2>
       <div class="projects">
-        <article class="project">
-          <div class="ptop"><h3>S&amp;R Rentals</h3><span class="live">● Live</span></div>
-          <p class="sub">Camera rental booking and operations platform</p>
-          <ul>
-            <li>Production platform that has processed 150+ bookings and tracks ₱60,000+ in monthly revenue.</li>
-            <li>Replaced a manual Google Forms process and reduced booking turnaround time by 50%.</li>
-            <li>Includes an admin analytics dashboard, JWT authentication, and a data layer that enabled a MongoDB to Supabase migration.</li>
-          </ul>
-          <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Node.js</span><span class="tag">Vercel Serverless</span><span class="tag">Supabase</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Google Analytics 4</span></div>
+        <article class="case c-snr">
+          <div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/proj-snr.webp" alt="S&amp;R Rentals booking website home page" width="1200" height="750" loading="lazy"></div></div>
+          <div>
+            <p class="kicker"><b>01</b> Web Platform <span class="live">● Live</span></p>
+            <h3>S&amp;R Rentals</h3>
+            <p class="pitch">A booking and operations platform for a camera rental business, replacing a manual Google Forms process.</p>
+            <ul class="wins">
+              <li><span><strong>150+ bookings</strong> processed and <strong>₱60,000+</strong> in monthly revenue tracked</span></li>
+              <li><span><strong>50% faster</strong> booking turnaround</span></li>
+              <li><span>Admin analytics dashboard, JWT authentication, and a MongoDB to Supabase migration</span></li>
+            </ul>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Vercel Serverless</span><span class="tag">Supabase</span><span class="tag">MongoDB</span><span class="tag">GA4</span></div>
+          </div>
         </article>
-        <article class="project">
-          <div class="ptop"><h3>AgriLink</h3></div>
-          <p class="sub">Farm-to-table mobile logistics app</p>
-          <ul>
-            <li>Cross-platform app with separate workflows for farmers, buyers, and delivery riders.</li>
-            <li>Secure payments through Xendit, plus real-time order tracking and route planning with Leaflet maps. Released as an Android APK.</li>
-          </ul>
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">Xendit</span><span class="tag">Leaflet</span><span class="tag">Android SDK</span></div>
+
+        <article class="case c-agri">
+          <div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/proj-agrilink.webp" alt="AgriLink download website" width="1200" height="750" loading="lazy"></div></div>
+          <div>
+            <p class="kicker"><b>02</b> Android App</p>
+            <h3>AgriLink</h3>
+            <p class="pitch">A farm-to-table marketplace that connects local farmers directly with buyers, with verified riders handling delivery.</p>
+            <ul class="wins">
+              <li><span><strong>Three user roles</strong>: farmers, buyers, and delivery riders</span></li>
+              <li><span><strong>Secure payments</strong> through Xendit</span></li>
+              <li><span><strong>Live order tracking</strong> and route planning with Leaflet maps</span></li>
+            </ul>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span><span class="tag">Xendit</span><span class="tag">Leaflet</span></div>
+            <div class="links-row">
+              <a class="btn primary" href="https://github.com/Ftmshamel/AgriLink/releases/download/apk-latest/AgriLink.apk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>Download APK</a>
+              <a class="btn" href="https://ftmshamel.github.io/AgriLink/" target="_blank" rel="noopener">Visit Site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
         </article>
-        <article class="project">
-          <div class="ptop"><h3>Parish Management Platform</h3></div>
-          <p class="sub">AI-assisted administrative system</p>
-          <ul>
-            <li>React frontend and Express/Node.js backend with role-based access control using JWT.</li>
-            <li>Uses Google Document AI for document verification and GROQ AI for natural-language queries. Deployed on Vercel.</li>
-          </ul>
-          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MySQL</span><span class="tag">JWT</span><span class="tag">Document AI</span><span class="tag">GROQ AI</span></div>
+
+        <article class="case c-parish">
+          <div class="shot"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/proj-parish.webp" alt="AI-Assisted Parish Management Platform download website" width="1200" height="750" loading="lazy"></div></div>
+          <div>
+            <p class="kicker"><b>03</b> Web &amp; Android · AI <span class="team">Team project</span></p>
+            <h3>AI-Assisted Parish Management Platform</h3>
+            <p class="pitch">A digital platform for Sto. Rosario Parish Church that brings parish records and everyday coordination into one place.</p>
+            <ul class="wins">
+              <li><span><strong>Document verification</strong> using Google Document AI</span></li>
+              <li><span><strong>Natural-language queries</strong> powered by GROQ AI</span></li>
+              <li><span><strong>Role-based access control</strong> with JWT on a React and Express stack</span></li>
+            </ul>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MySQL</span><span class="tag">Document AI</span><span class="tag">GROQ AI</span></div>
+            <div class="links-row">
+              <a class="btn primary" href="https://github.com/kristinestaana10-hash/ParishManagementPlatform/releases/latest/download/AI-Assisted.Parish.Management.Platform.apk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></svg>Download APK</a>
+              <a class="btn" href="https://kristinestaana10-hash.github.io/parish_app/" target="_blank" rel="noopener">Visit Site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+            </div>
+          </div>
         </article>
       </div>
     </div>
