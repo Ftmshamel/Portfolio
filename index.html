@@ -48,13 +48,18 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01e
 /* nav */
 header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-family:Fraunces,serif;font-weight:600;font-size:1.15rem}
-.brand span{color:var(--accent)}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:38px;height:38px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:Fraunces,serif;font-weight:600;font-size:1rem;letter-spacing:.02em;transition:.2s}
+.brand:hover .mark{background:var(--accent);color:#fff}
+.bname{display:flex;flex-direction:column;line-height:1.2}
+.bname b{font-weight:600;font-size:.95rem}
+.bname small{color:var(--ink-3);font-size:.75rem}
 .links{display:flex;gap:28px;align-items:center;font-size:.92rem;color:var(--ink-2)}
 .links a:hover{color:var(--ink)}
 .theme{background:none;border:1px solid var(--line);color:var(--ink-2);width:36px;height:36px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
 .theme:hover{color:var(--ink);border-color:var(--ink-3)}
 @media (max-width:760px){.links a{display:none}}
+@media (max-width:400px){.bname small{display:none}}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding:88px 0 72px}
@@ -173,14 +178,14 @@ footer{padding:40px 0;color:var(--ink-3);font-size:.88rem;display:flex;justify-c
 
 <header>
   <nav class="wrap">
-    <a class="brand" href="#top">Shamel<span>.</span></a>
+    <a class="brand" href="#top" aria-label="Shamel Fatima Perono — home"><span class="mark">SP</span><span class="bname"><b>Shamel Fatima Perono</b><small>Full-Stack &amp; Mobile Developer</small></span></a>
     <div class="links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
-      <button class="theme" id="theme" aria-label="Toggle color theme">◐</button>
+      <button class="theme" id="theme" aria-label="Toggle color theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     </div>
   </nav>
 </header>
