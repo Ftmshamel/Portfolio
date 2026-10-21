@@ -72,11 +72,9 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .badge{position:relative;display:flex;align-items:center;gap:12px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 18px 40px -12px rgba(15,23,42,.28);white-space:nowrap}
 .badge b{display:block;font-size:.95rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
 .badge small{display:block;font-size:.75rem;color:var(--ink-2)}
-.badge .bi{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:none}
 .badge .num{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:1}
 .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.badge{padding:10px 14px;gap:10px;border-radius:14px;box-shadow:0 10px 24px -14px rgba(15,23,42,.35)}
-.badge .bi{width:32px;height:32px;border-radius:9px}
+.badge{padding:10px 16px;border-radius:12px;box-shadow:none;border-left:3px solid var(--accent)}
 .badge b{font-size:.85rem}.badge small{font-size:.72rem}
 .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:14px}
 .role{font-size:clamp(1.15rem,2vw,1.4rem);color:var(--accent);font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
@@ -117,16 +115,15 @@ h2{font-size:clamp(2rem,3.8vw,2.85rem);font-weight:800;letter-spacing:-.035em;li
 .xp{display:grid;gap:18px}
 .card{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:30px;transition:border-color .25s,box-shadow .25s,transform .25s}
 .card:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));box-shadow:0 16px 40px rgba(15,23,42,.07);transform:translateY(-2px)}
-.xcard{display:grid;grid-template-columns:auto 1fr auto;gap:6px 22px;align-items:start}
-.ico{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;grid-row:span 2}
+.xcard{display:grid;grid-template-columns:170px 1fr;gap:4px 36px;align-items:start}
 .xcard h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
-.xcard .org{color:var(--ink-2);font-size:.95rem;grid-column:2}
-.pill{font-size:.8rem;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:999px;white-space:nowrap;grid-column:3;grid-row:1}
-.xcard ul{grid-column:2/-1;margin-top:12px;padding-left:18px;color:var(--ink-2);display:grid;gap:8px}
-.xcard li::marker{color:var(--accent)}
+.xcard h3,.xcard .org,.xcard ul{grid-column:2}
+.xcard .org{color:var(--accent);font-size:.95rem;font-weight:500}
+.pill{font-size:.85rem;font-weight:600;color:var(--ink-3);grid-column:1;grid-row:1/span 3;padding-top:4px;letter-spacing:.01em}
+.xcard ul{margin-top:12px;padding-left:18px;color:var(--ink-2);display:grid;gap:8px}
+.xcard li::marker{color:var(--ink-3)}
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .edu .card{display:flex;flex-direction:column;gap:6px}
-.edu .ico{grid-row:auto;margin-bottom:14px}
 .edu h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;line-height:1.3}
 .edu .org{color:var(--ink-2)}
 .edu .when{font-size:.85rem;font-weight:600;color:var(--accent);margin-bottom:4px}
@@ -180,7 +177,7 @@ h2{font-size:clamp(2rem,3.8vw,2.85rem);font-weight:800;letter-spacing:-.035em;li
 .old:hover{border-color:var(--ink-3);box-shadow:0 10px 28px rgba(15,23,42,.06)}
 .old .icon{width:64px;height:64px;border-radius:16px;background:var(--bg-soft);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
 .old .icon img{width:52px;height:52px}
-.old .icon.java{background:linear-gradient(135deg,#f89820,#e76f00);border:0;color:#fff;font-weight:800;font-size:.95rem;letter-spacing:.02em}
+.old .icon.java{color:var(--ink-2);font:600 .8rem ui-monospace,SFMono-Regular,Menlo,monospace}
 .old h3{font-size:1.15rem;font-weight:600;margin-bottom:4px}
 .old .pitch{margin-bottom:12px;font-size:.96rem}
 .old .wins{margin-bottom:16px}
@@ -189,25 +186,19 @@ h2{font-size:clamp(2rem,3.8vw,2.85rem);font-weight:800;letter-spacing:-.035em;li
 .private{font-size:.8rem;color:var(--ink-3);display:inline-flex;align-items:center;gap:6px;margin-top:14px}
 
 /* events */
-.events{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.event{display:flex;gap:16px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px;transition:border-color .2s,transform .2s,box-shadow .2s}
-.event:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));transform:translateY(-2px);box-shadow:0 14px 32px rgba(15,23,42,.07)}
-.event .mark{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:-.02em}
-.event .mark.m-aws{font-size:.8rem;color:#ff9900}
-[data-theme="dark"] .event .mark.m-notion{color:#191919}
-.event h3{font-size:1.05rem;font-weight:700;line-height:1.35;margin-bottom:4px}
-.event p{font-size:.85rem;color:var(--ink-2);display:flex;align-items:center;gap:6px}
-.event p svg{flex:none;color:var(--ink-3)}
-.m-notion{background:#191919}[data-theme="dark"] .m-notion{background:#f5f5f5;color:#191919}
-.m-google{background:linear-gradient(135deg,#4285f4,#34a853)}
-.m-aws{background:#232f3e;color:#ff9900}[data-theme="dark"] .m-aws{background:#2c3a4d}
-.m-figma{background:linear-gradient(135deg,#f24e1e,#a259ff)}
+.events{background:var(--bg);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.event{display:grid;grid-template-columns:200px 1fr auto;gap:8px 28px;align-items:center;padding:22px 28px;border-top:1px solid var(--line);transition:background .2s}
+.event:first-child{border-top:0}
+.event:hover{background:var(--bg-soft)}
+.event .org{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.event h3{font-size:1.05rem;font-weight:600;line-height:1.35}
+.event .where{font-size:.88rem;color:var(--ink-2);margin-top:2px}
+.event .fmt{font-size:.78rem;font-weight:600;color:var(--ink-2);border:1px solid var(--line);padding:4px 12px;border-radius:999px;white-space:nowrap}
 
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .skill{display:flex;flex-direction:column;gap:14px}
-.skill .head{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.02rem}
-.skill .ico{width:42px;height:42px;border-radius:12px;grid-row:auto}
+.skill .head{font-weight:700;font-size:1.02rem;padding-bottom:12px;border-bottom:1px solid var(--line)}
 
 /* contact */
 .contact{background:linear-gradient(135deg,#0b1b45,#1e40af);color:#fff;border-radius:28px;padding:64px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
@@ -238,7 +229,7 @@ footer a:hover{color:var(--accent)}
 
 @media (max-width:960px){
   .about,.contact{grid-template-columns:1fr;gap:32px}
-  .skills,.events{grid-template-columns:1fr 1fr}
+  .skills{grid-template-columns:1fr 1fr}
   .contact{padding:48px 36px}
 }
 @media (max-width:860px){
@@ -255,11 +246,12 @@ footer a:hover{color:var(--accent)}
   section{padding:72px 0}
   .sh{margin-bottom:36px}
   .card{padding:22px}
-  .xcard{grid-template-columns:auto 1fr;gap:4px 16px}
-  .xcard .ico{width:44px;height:44px;grid-row:span 2}
-  .pill{grid-column:2;grid-row:auto;justify-self:start;margin-top:6px}
-  .xcard ul{grid-column:1/-1}
-  .edu,.skills,.events{grid-template-columns:1fr}
+  .xcard{grid-template-columns:1fr;gap:4px}
+  .xcard h3,.xcard .org,.xcard ul{grid-column:1}
+  .pill{grid-column:1;grid-row:auto;padding:0;margin-bottom:4px}
+  .edu,.skills{grid-template-columns:1fr}
+  .event{grid-template-columns:1fr auto;padding:18px 20px}
+  .event .org{grid-column:1/-1}
   .fact{padding:12px 14px}
   .contact{padding:40px 24px;border-radius:20px}
   .case{grid-template-columns:1fr;gap:24px}
@@ -326,11 +318,6 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="portrait">
       <div class="p-frame"><div class="p-card"><img src="assets/portrait.webp" alt="Portrait of Shamel Fatima C. Perono" width="1088" height="720"></div></div>
-      <div class="badges">
-      <div class="badge"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ITS Certified</b><small>Cybersecurity</small></div></div>
-      <div class="badge"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><div><b>BS Information Technology</b><small>National University – Baliwag</small></div></div>
-      <div class="badge"><span class="bi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span><div><b>Full-Stack &amp; Mobile</b><small>React · Node.js · Flutter</small></div></div>
-      </div>
     </div>
   </div>
 
@@ -362,7 +349,7 @@ footer a:hover{color:var(--accent)}
       </div>
       <div class="xp">
         <article class="card xcard reveal">
-          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+          
           <h3>Operations Manager</h3><span class="pill">2026 – Present</span>
           <p class="org">S&amp;R Photography Equipment Rental · Student-led business</p>
           <ul>
@@ -371,7 +358,7 @@ footer a:hover{color:var(--accent)}
           </ul>
         </article>
         <article class="card xcard reveal">
-          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14.5a5 5 0 0 1 4.5 5"/></svg></span>
+          
           <h3>Class Representative</h3><span class="pill">1st Year – 2nd Year</span>
           <p class="org">BS Information Technology · National University – Baliwag</p>
           <ul>
@@ -380,7 +367,7 @@ footer a:hover{color:var(--accent)}
           </ul>
         </article>
         <article class="card xcard reveal">
-          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></span>
+          
           <h3>Group and Class Leader</h3><span class="pill">1st Year – Present</span>
           <p class="org">Academic projects and class activities</p>
           <ul>
@@ -482,7 +469,7 @@ footer a:hover{color:var(--accent)}
         <div class="step reveal">
           <p class="year">1st Year <span>2023 – 2024</span></p>
           <article class="old">
-            <div class="icon java">Java</div>
+            <div class="icon java">.java</div>
             <div>
               <h3>Java Programming Foundations</h3>
               <p class="pitch">Console programs and machine problems from my first two terms, where I learned logic, loops, and string processing.</p>
@@ -516,14 +503,14 @@ Quiz#2 (20)= <span class="g">19</span></div>
       </div>
       <div class="edu">
         <article class="card reveal">
-          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+          
           <p class="when">4th Year · Current</p>
           <h3>Bachelor of Science in Information Technology</h3>
           <p class="org">National University – Baliwag, Baliwag City, Bulacan</p>
           <p class="body">Relevant coursework: Data Structures and Algorithms, Web and Mobile App Development, Database Management, Object-Oriented Programming, Information Security, Network and Application Security</p>
         </article>
         <article class="card cert reveal">
-          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          
           <p class="when">Issued June 2026</p>
           <h3>Information Technology Specialist (ITS) – Cybersecurity</h3>
           <p class="org">Certiport, a Pearson VUE Business</p>
@@ -540,12 +527,12 @@ Quiz#2 (20)= <span class="g">19</span></div>
         <h2>Seminars &amp; Events</h2>
         <p class="sub">Industry seminars, webinars, and tech events I have attended to keep learning outside the classroom.</p>
       </div>
-      <div class="events">
-        <div class="event reveal"><span class="mark m-google">G</span><div><h3>Google Tech Event</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Onsite at the Google office</p></div></div>
-        <div class="event reveal"><span class="mark m-aws">aws</span><div><h3>AWS Tech Event</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Onsite at the AWS office</p></div></div>
-        <div class="event reveal"><span class="mark m-aws">aws</span><div><h3>AWS Campus Event</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>National University – Baliwag</p></div></div>
-        <div class="event reveal"><span class="mark m-notion">N</span><div><h3>Notion Webinar</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Online</p></div></div>
-        <div class="event reveal"><span class="mark m-figma">F</span><div><h3>Figma Event</h3><p>Design and prototyping</p></div></div>
+      <div class="events reveal">
+        <div class="event"><p class="org">Google</p><div><h3>Google Tech Event</h3><p class="where">Google office</p></div><span class="fmt">Onsite</span></div>
+        <div class="event"><p class="org">Amazon Web Services</p><div><h3>AWS Tech Event</h3><p class="where">AWS office</p></div><span class="fmt">Onsite</span></div>
+        <div class="event"><p class="org">Amazon Web Services</p><div><h3>AWS Campus Event</h3><p class="where">National University – Baliwag</p></div><span class="fmt">On campus</span></div>
+        <div class="event"><p class="org">Notion</p><div><h3>Notion Webinar</h3><p class="where">Online session</p></div><span class="fmt">Online</span></div>
+        <div class="event"><p class="org">Figma</p><div><h3>Figma Design Event</h3><p class="where">Design and prototyping</p></div></div>
       </div>
     </div>
   </section>
@@ -558,12 +545,12 @@ Quiz#2 (20)= <span class="g">19</span></div>
         <p class="sub">The languages, frameworks, and tools I use to build and ship applications.</p>
       </div>
       <div class="skills">
-        <div class="card skill reveal"><div class="head"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg></span>Languages</div><div class="tags"><span class="tag plain">JavaScript</span><span class="tag plain">Dart</span><span class="tag plain">SQL</span><span class="tag plain">HTML5</span><span class="tag plain">CSS3</span></div></div>
-        <div class="card skill reveal"><div class="head"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>Frameworks</div><div class="tags"><span class="tag plain">React.js</span><span class="tag plain">Express.js</span><span class="tag plain">Flutter</span><span class="tag plain">Node.js</span></div></div>
-        <div class="card skill reveal"><div class="head"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>Databases</div><div class="tags"><span class="tag plain">MySQL</span><span class="tag plain">Firebase Firestore</span><span class="tag plain">Supabase</span><span class="tag plain">MongoDB</span></div></div>
-        <div class="card skill reveal"><div class="head"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/></svg></span>Cloud &amp; Hosting</div><div class="tags"><span class="tag plain">Vercel</span><span class="tag plain">Firebase Hosting</span></div></div>
-        <div class="card skill reveal"><div class="head"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span>Tools</div><div class="tags"><span class="tag plain">Git</span><span class="tag plain">GitHub</span><span class="tag plain">VS Code</span><span class="tag plain">Android SDK</span><span class="tag plain">Figma</span><span class="tag plain">Canva</span></div></div>
-        <div class="card skill reveal"><div class="head"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span>Concepts</div><div class="tags"><span class="tag plain">RESTful APIs</span><span class="tag plain">MVC</span><span class="tag plain">Serverless Architecture</span><span class="tag plain">Role-Based Access Control</span><span class="tag plain">Project Management</span></div></div>
+        <div class="card skill reveal"><div class="head">Languages</div><div class="tags"><span class="tag plain">JavaScript</span><span class="tag plain">Dart</span><span class="tag plain">SQL</span><span class="tag plain">HTML5</span><span class="tag plain">CSS3</span></div></div>
+        <div class="card skill reveal"><div class="head">Frameworks</div><div class="tags"><span class="tag plain">React.js</span><span class="tag plain">Express.js</span><span class="tag plain">Flutter</span><span class="tag plain">Node.js</span></div></div>
+        <div class="card skill reveal"><div class="head">Databases</div><div class="tags"><span class="tag plain">MySQL</span><span class="tag plain">Firebase Firestore</span><span class="tag plain">Supabase</span><span class="tag plain">MongoDB</span></div></div>
+        <div class="card skill reveal"><div class="head">Cloud &amp; Hosting</div><div class="tags"><span class="tag plain">Vercel</span><span class="tag plain">Firebase Hosting</span></div></div>
+        <div class="card skill reveal"><div class="head">Tools</div><div class="tags"><span class="tag plain">Git</span><span class="tag plain">GitHub</span><span class="tag plain">VS Code</span><span class="tag plain">Android SDK</span><span class="tag plain">Figma</span><span class="tag plain">Canva</span></div></div>
+        <div class="card skill reveal"><div class="head">Concepts</div><div class="tags"><span class="tag plain">RESTful APIs</span><span class="tag plain">MVC</span><span class="tag plain">Serverless Architecture</span><span class="tag plain">Role-Based Access Control</span><span class="tag plain">Project Management</span></div></div>
       </div>
     </div>
   </section>
